@@ -89,4 +89,17 @@ Status: **PASS**
 =======
 # Veriface
 Lightweight offline facial authentication with presence verification, GPS attendance, encrypted storage, and secure local proof.
->>>>>>> a5dccceb2c7c04d71101a803722bb9a626698464
+
+
+=======
+# Future Upgrades
+1. Multi-user registration
+2. Attendance history screen
+3. Proof history screen
+4. Offline sync queue with pending/synced/failed states
+5. QR scanner for proof verification
+6. Multiple enrollment samples
+7. Face quality scoring
+8. Encrypted attendance and audit logs
+9. Geofenced attendance
+10. Admin dashboard
