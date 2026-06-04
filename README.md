@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # FaceLockAuthStable
 
 FaceLockAuthStable is a lightweight offline biometric authentication system built with React Native. It performs local face registration, face login, presence verification, GPS-based attendance, secure proof generation, and encrypted local storage without requiring internet access.
@@ -85,3 +86,7 @@ Target model size: **~20 MB or less**
 
 Status: **PASS**
 
+=======
+# Veriface
+Lightweight offline facial authentication with presence verification, GPS attendance, encrypted storage, and secure local proof.
+>>>>>>> a5dccceb2c7c04d71101a803722bb9a626698464
