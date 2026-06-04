@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Veriface
 
 Veriface is a lightweight offline biometric authentication system built with React Native. It performs local face registration, face login, presence verification, GPS-based attendance, secure proof generation, and encrypted local storage without requiring internet access.
