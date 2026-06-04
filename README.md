@@ -68,9 +68,9 @@ Encrypted items include:
 - Last presence verification result
 - Secure proof data
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## Model Footprint
+### Model Footprint
 
 The application uses a lightweight offline ML pipeline optimized for mobile devices.
 
@@ -86,20 +86,17 @@ Target model size: **~20 MB or less**
 
 Status: **PASS**
 
-=======
-# Veriface
-Lightweight offline facial authentication with presence verification, GPS attendance, encrypted storage, and secure local proof.
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-=======
-# Future Upgrades
-1. Multi-user registration
-2. Attendance history screen
-3. Proof history screen
-4. Offline sync queue with pending/synced/failed states
-5. QR scanner for proof verification
-6. Multiple enrollment samples
-7. Face quality scoring
-8. Encrypted attendance and audit logs
-9. Geofenced attendance
-10. Admin dashboard
+### Future Upgrades
+- Multi-user registration
+- Attendance history screen
+- Proof history screen
+- Offline sync queue with pending/synced/failed states
+- QR scanner for proof verification
+- Multiple enrollment samples
+- Face quality scoring
+- Encrypted attendance and audit logs
+- Geofenced attendance
+- Admin dashboard
