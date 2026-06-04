@@ -1,13 +1,13 @@
 <<<<<<< HEAD
-# FaceLockAuthStable
+# Veriface
 
-FaceLockAuthStable is a lightweight offline biometric authentication system built with React Native. It performs local face registration, face login, presence verification, GPS-based attendance, secure proof generation, and encrypted local storage without requiring internet access.
+Veriface is a lightweight offline biometric authentication system built with React Native. It performs local face registration, face login, presence verification, GPS-based attendance, secure proof generation, and encrypted local storage without requiring internet access.
 
 ---
 
 ## 1. Project Objective
 
-The objective of FaceLockAuthStable is to provide a secure, lightweight, offline facial authentication system suitable for remote or low-connectivity environments.
+The objective of Veriface is to provide a secure, lightweight, offline facial authentication system suitable for remote or low-connectivity environments.
 
 The system is designed to:
 
