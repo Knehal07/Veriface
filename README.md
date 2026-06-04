@@ -1,79 +1,87 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# FaceLockAuthStable
 
-# Getting Started
+FaceLockAuthStable is a lightweight offline biometric authentication system built with React Native. It performs local face registration, face login, presence verification, GPS-based attendance, secure proof generation, and encrypted local storage without requiring internet access.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+---
 
-## Step 1: Start the Metro Server
+## 1. Project Objective
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+The objective of FaceLockAuthStable is to provide a secure, lightweight, offline facial authentication system suitable for remote or low-connectivity environments.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+The system is designed to:
 
-```bash
-# using npm
-npm start
+- Authenticate users using offline face recognition
+- Verify physical presence using lightweight liveness checks
+- Store biometric embeddings securely on-device
+- Mark attendance with GPS location
+- Generate tamper-aware local proof using SHA-256 hashing
+- Run efficiently on midrange devices without high-end GPU requirements
 
-# OR using Yarn
-yarn start
-```
+---
 
-## Step 2: Start your Application
+## 2. Key Features
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+### Face Registration
 
-### For Android
+- Captures user face using the front camera
+- Detects face using a lightweight BlazeFace / MediaPipe face detector
+- Crops and resizes face to MobileFaceNet input size
+- Generates a face embedding using MobileFaceNet
+- Stores the embedding securely using encrypted local storage
 
-```bash
-# using npm
-npm run android
+### Face Login
 
-# OR using Yarn
-yarn android
-```
+- Captures current face
+- Generates current face embedding
+- Compares with stored embedding using cosine similarity
+- Allows login only when the match score crosses the threshold
 
-### For iOS
+### Presence Verification
 
-```bash
-# using npm
-npm run ios
+- Performs lightweight anti-spoof verification before login
+- Supports head-turn based challenge-response verification
+- Designed to prevent basic photo or screen replay spoofing
 
-# OR using Yarn
-yarn ios
-```
+### GPS Attendance
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+- Marks secure attendance only after authentication
+- Stores timestamp, latitude, longitude, GPS accuracy, and map link
+- Works offline using local storage
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+### Secure Local Proof
 
-## Step 3: Modifying your App
+- Generates local proof code
+- Includes match score, timestamp, GPS location, and presence verification result
+- Generates SHA-256 hash for tamper detection
+- Supports QR-based proof display
+- Supports export as JSON or certificate text file
 
-Now that you have successfully run the app, let's modify it.
+### Encrypted Storage
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+Sensitive biometric data is stored using secure device storage.
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+Encrypted items include:
 
-## Congratulations! :tada:
+- Registered face embedding
+- Last match score
+- Last presence verification result
+- Secure proof data
 
-You've successfully run and modified your React Native App. :partying_face:
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-### Now what?
+## Model Footprint
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+The application uses a lightweight offline ML pipeline optimized for mobile devices.
 
-# Troubleshooting
+|       Model          |            Purpose                 |   Size   |
+|----------------------|------------------------------------|----------|
+| blazeface.tflite     | Face detection                     | ~0.40 MB |
+| face_landmark.tflite | Facial landmark/liveness support   | ~2.33 MB |
+| mobilefacenet.tflite | Face recognition embeddings        | ~4.99 MB |
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+Total model size: **~7.72 MB**
 
-# Learn More
+Target model size: **~20 MB or less**
 
-To learn more about React Native, take a look at the following resources:
+Status: **PASS**
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.

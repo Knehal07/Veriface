@@ -1,4 +1,4 @@
-package com.facelockauthstable
+package com.veriface
 
 import android.app.Application
 import com.facebook.react.PackageList
