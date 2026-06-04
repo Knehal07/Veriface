@@ -1,4 +1,4 @@
-# FaceLockAuthStable Installation Requirements
+# Veriface Installation Requirements
 
 ---
 
@@ -24,7 +24,7 @@ Target mobile device:
 From the project root:
 
 ```powershell
-cd D:\FaceLockAuthStable
+cd D:\Veriface
 npm install
 ```
 
@@ -70,7 +70,7 @@ npx react-native start --reset-cache --port 8088
 Open another terminal:
 
 ```powershell
-cd D:\FaceLockAuthStable
+cd D:\Veriface
 npx react-native run-android --port 8088
 ```
 
@@ -87,13 +87,13 @@ Open app → Reset Registered Face
 Alternative from device settings:
 
 ```text
-Settings → Apps → FaceLockAuthStable → Storage & cache → Clear storage
+Settings → Apps → Veriface → Storage & cache → Clear storage
 ```
 
 Some devices may block:
 
 ```powershell
-adb shell pm clear com.facelockauthstable
+adb shell pm clear com.Veriface
 ```
 
 If blocked, use the app reset button or Android Settings.
